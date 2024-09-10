@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { MainTable, Th, Td } from "./UserTable.styled.ts";
+import { MainTable, Th, Td, Tr } from "./UserTable.styled.ts";
 import { selectMakersArr } from "../../redux/users/selectors.ts";
 import { FiltersType, rowNamesTypes, UserType } from "../../types.ts";
 import { Filter } from "../Filter/Filter.tsx";
@@ -31,12 +31,12 @@ export const UserTable = () => {
         <tbody>
           {filteredUsers.map(({ id, name, username, email, phone }) => {
             return (
-              <tr key={id}>
+              <Tr key={id}>
                 <Td>{name}</Td>
                 <Td>{username}</Td>
                 <Td>{email}</Td>
                 <Td>{phone}</Td>
-              </tr>
+              </Tr>
             );
           })}
         </tbody>

@@ -12,7 +12,7 @@ export const FormInput = styled.input`
   padding: 6px 12px;
   border: none;
   border-radius: 2px;
-  font-size: 16px;
+  font-size: 14px;
   margin: 12px 6px 6px 0;
   gap: 10px;
 `;
@@ -46,4 +46,8 @@ export const Clear = styled.div`
 
 export const Icon = styled(MdOutlineClear)`
   fill: white;
+`;
+
+export const Label = styled.label`
+  font-size: 14px;
 `;

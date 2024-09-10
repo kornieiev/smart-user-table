@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setFilters } from "../../redux/users/slice";
 import { AppDispatch } from "../../redux/store";
 import { selectFilters } from "../../redux/users/selectors";
-import { Clear, FormInput, FormWrapper, Icon } from "./Filter.styled";
+import { Clear, FormInput, FormWrapper, Icon, Label } from "./Filter.styled";
 import { FiltersType } from "../../types";
 
 type FilterProps = {
@@ -42,7 +42,7 @@ export const Filter: FC<FilterProps> = ({ rowName }) => {
             <Icon />
           </Clear>
         )}
-        <label htmlFor='nameInput'>{valueParam}:</label>
+        <Label htmlFor='nameInput'>{valueParam}:</Label>
         <br />
         <FormInput
           type='text'
