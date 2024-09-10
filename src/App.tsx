@@ -7,16 +7,17 @@ import { AppDispatch } from "./redux/store.ts";
 import { DNA } from "react-loader-spinner";
 import {
   selectAllUsers,
-  selectError,
+  // selectError,
   selectLoading,
 } from "./redux/users/selectors.ts";
-import toast, { Toaster } from "react-hot-toast";
+import { MainText } from "./App.styled.ts";
+// import toast, { Toaster } from "react-hot-toast";
 
 function App() {
   const dispatch: AppDispatch = useDispatch();
   const data = useSelector(selectAllUsers);
   const isLoading = useSelector(selectLoading);
-  const isError = useSelector(selectError);
+  // const isError = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchAllUsers());
@@ -24,7 +25,7 @@ function App() {
 
   return (
     <>
-      {isError && <Toaster />}
+      {/* {isError && <Toaster />} */}
       {isLoading && (
         <DNA
           visible={true}
@@ -36,7 +37,7 @@ function App() {
         />
       )}
 
-      <h1>Smart User Table</h1>
+      <MainText>Smart User Table</MainText>
       {data?.length > 0 ? <UserTable /> : <p>Error! Data not available!</p>}
     </>
   );

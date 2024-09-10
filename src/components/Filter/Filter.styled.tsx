@@ -11,15 +11,18 @@ export const FormInput = styled.input`
   width: 90%;
   padding-right: 8px;
   padding-left: 8px;
+  border: none;
+  border-radius: 8px;
+  padding: 4px;
 `;
 
 export const Clear = styled.div`
   display: block;
   position: absolute;
   right: 0px;
-  top: -3px;
-  width: 25px;
-  height: 25px;
+  top: 0px;
+  width: 18px;
+  height: 18px;
   border-radius: 50px;
   border: 1px solid white;
 

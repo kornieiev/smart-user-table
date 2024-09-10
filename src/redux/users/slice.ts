@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchAllUsers } from "./operations";
 import { FilterKeys, StateType } from "../../types";
+import { SerializedError } from "@reduxjs/toolkit";
 
 const initialState: StateType = {
   allUsers: [],
@@ -20,10 +21,15 @@ const handlePending = (state: StateType): void => {
 
 const handleRejected = (
   state: StateType,
-  action: PayloadAction<never | string>
+  action: PayloadAction<unknown, string, any, SerializedError>
 ): void => {
   state.isLoading = false;
-  state.error = action.payload;
+
+  if (typeof action.payload === "string") {
+    state.error = action.payload;
+  } else {
+    state.error = action.error.message || null;
+  }
 };
 
 const usersSlice = createSlice({

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { MainTable, Th, Td } from "./UserTable.styled.ts";
 import { selectMakersArr } from "../../redux/users/selectors.ts";
-import { rowNamesTypes, UserType } from "../../types.ts";
+import { FiltersType, rowNamesTypes, UserType } from "../../types.ts";
 import { Filter } from "../Filter/Filter.tsx";
 
 export const UserTable = () => {
@@ -19,10 +19,10 @@ export const UserTable = () => {
       <MainTable>
         <thead>
           <tr>
-            {Object.entries(rowNames).map((key) => {
+            {Object.entries(rowNames).map(([key, value]) => {
               return (
-                <Th key={key[0]}>
-                  <Filter rowName={key} />
+                <Th key={key}>
+                  <Filter rowName={[key as keyof FiltersType, value]} />
                 </Th>
               );
             })}
