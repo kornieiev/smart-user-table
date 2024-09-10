@@ -7,6 +7,7 @@ export const MainTable = styled.table`
 `;
 
 export const Th = styled.th`
+  /* position: absolute; */
   border: 1px solid green;
   padding: 10px;
   text-align: left;

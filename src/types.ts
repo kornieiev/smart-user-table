@@ -24,7 +24,7 @@ export interface UserType {
 
 export interface FiltersType {
   name: string;
-  userName: string;
+  username: string;
   phone: string;
   email: string;
 }
@@ -35,3 +35,12 @@ export interface StateType {
   error: null | string;
   filters: FiltersType;
 }
+
+export interface rowNamesTypes {
+  name: string;
+  username: string;
+  email: string;
+  phone: string;
+}
+
+// type PersonPart = Pick<Person, "name" | "age">;

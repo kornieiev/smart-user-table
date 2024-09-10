@@ -1,22 +1,15 @@
 import { useSelector } from "react-redux";
 import { MainTable, Th, Td } from "./UserTable.styled.ts";
 import { selectAllUsers } from "../../redux/users/selectors.ts";
-import { UserType } from "../../types.ts";
+import { rowNamesTypes, UserType } from "../../types.ts";
 import { Filter } from "../Filter/Filter.tsx";
 
 export const UserTable = () => {
   const users: UserType[] = useSelector(selectAllUsers);
 
-  interface rowNamesTypes {
-    name: string;
-    userName: string;
-    email: string;
-    phone: string;
-  }
-
   const rowNames: rowNamesTypes = {
     name: "Name",
-    userName: "User name",
+    username: "User name",
     email: "Email",
     phone: "Phone",
   };

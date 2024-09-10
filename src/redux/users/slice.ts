@@ -8,7 +8,7 @@ const initialState: StateType = {
   error: null,
   filters: {
     name: "",
-    userName: "",
+    username: "",
     phone: "",
     email: "",
   },

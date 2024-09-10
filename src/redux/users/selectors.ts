@@ -1,4 +1,4 @@
-// import { createSelector } from "reselect";
+import { createSelector } from "reselect";
 import { UserType, FiltersType } from "../../types";
 import { RootState } from "../store";
 
@@ -14,10 +14,16 @@ export const selectError = (state: RootState): unknown | string =>
 export const selectFilters = (state: RootState): FiltersType =>
   state.users.filters;
 
-// export const selectMakersArr = createSelector(
-//   [selectAllKeys],
-//   (selectAllKeys) => {
-//     const uniqueMakers = [...new Set(selectAllKeys.map((item) => item.Maker))];
-//     return uniqueMakers;
-//   }
-// );
+export const selectMakersArr = createSelector(
+  [selectAllUsers],
+  (selectAllUsers) => {
+    const filteredData = [
+      ...new Set(
+        selectAllUsers.map((item) => {
+          console.log("item", item);
+        })
+      ),
+    ];
+    return filteredData;
+  }
+);
