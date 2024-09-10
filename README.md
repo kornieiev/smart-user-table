@@ -1,6 +1,4 @@
-# Smart User Table
-
-# React + TypeScript + Vite
+# Smart User Table (React + TypeScript + Vite)
 
 ## Used technologies:
 
