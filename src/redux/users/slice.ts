@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchAllUsers } from "./operations";
-import { StateType } from "../../types";
+import { FilterKeys, StateType } from "../../types";
 
 const initialState: StateType = {
   allUsers: [],
@@ -14,12 +14,14 @@ const initialState: StateType = {
   },
 };
 
-const handlePending = (state: StateType) => {
+const handlePending = (state: StateType): void => {
   state.isLoading = true;
 };
 
-const handleRejected = (state: StateType, action: PayloadAction<string>) => {
-  console.log("action", action);
+const handleRejected = (
+  state: StateType,
+  action: PayloadAction<never | string>
+): void => {
   state.isLoading = false;
   state.error = action.payload;
 };
@@ -28,34 +30,19 @@ const usersSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
-    setFilters: {
-      reducer(state, action) {
-        const { key, value } = action.payload;
-
-        function saveValue(key: string, value: string): void {
-          state.filters[key] = value;
-        }
-
-        // console.log("action", action.payload);
-
-        switch (key) {
-          case "name":
-            saveValue(key, value);
-            return;
-          case "username":
-            saveValue(key, value);
-            return;
-          case "email":
-            saveValue(key, value);
-            return;
-          case "phone":
-            saveValue(key, value);
-            return;
-          case "reset":
-            state.filters = initialState.filters;
-            return;
-        }
-      },
+    setFilters(
+      state,
+      action: PayloadAction<{
+        key: FilterKeys;
+        value: string;
+      }>
+    ) {
+      const { key, value } = action.payload;
+      if (key === "reset") {
+        state.filters = initialState.filters;
+      } else {
+        state.filters[key] = value;
+      }
     },
   },
   extraReducers: (builder) => {

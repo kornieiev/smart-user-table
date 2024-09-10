@@ -43,4 +43,4 @@ export interface rowNamesTypes {
   phone: string;
 }
 
-// type PersonPart = Pick<Person, "name" | "age">;
+export type FilterKeys = "name" | "username" | "phone" | "email" | "reset";

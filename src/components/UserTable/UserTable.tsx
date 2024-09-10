@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
 import { MainTable, Th, Td } from "./UserTable.styled.ts";
-import { selectAllUsers } from "../../redux/users/selectors.ts";
+import { selectMakersArr } from "../../redux/users/selectors.ts";
 import { rowNamesTypes, UserType } from "../../types.ts";
 import { Filter } from "../Filter/Filter.tsx";
 
 export const UserTable = () => {
-  const users: UserType[] = useSelector(selectAllUsers);
+  const filteredUsers: UserType[] = useSelector(selectMakersArr);
 
   const rowNames: rowNamesTypes = {
     name: "Name",
@@ -29,7 +29,7 @@ export const UserTable = () => {
           </tr>
         </thead>
         <tbody>
-          {users.map(({ id, name, username, email, phone }) => {
+          {filteredUsers.map(({ id, name, username, email, phone }) => {
             return (
               <tr key={id}>
                 <Td>{name}</Td>

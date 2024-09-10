@@ -15,15 +15,25 @@ export const selectFilters = (state: RootState): FiltersType =>
   state.users.filters;
 
 export const selectMakersArr = createSelector(
-  [selectAllUsers],
-  (selectAllUsers) => {
-    const filteredData = [
-      ...new Set(
-        selectAllUsers.map((item) => {
-          console.log("item", item);
-        })
-      ),
-    ];
+  [selectAllUsers, selectFilters],
+  (allUsers, filters) => {
+    const filteredData = allUsers.filter((item) => {
+      return (
+        item.name
+          .toLocaleLowerCase()
+          .includes(filters.name.toLocaleLowerCase()) &&
+        item.username
+          .toLocaleLowerCase()
+          .includes(filters.username.toLocaleLowerCase()) &&
+        item.email
+          .toLocaleLowerCase()
+          .includes(filters.email.toLocaleLowerCase()) &&
+        item.phone
+          .toLocaleLowerCase()
+          .includes(filters.phone.toLocaleLowerCase())
+      );
+    });
+
     return filteredData;
   }
 );

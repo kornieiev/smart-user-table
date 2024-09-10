@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { MdOutlineCleanHands } from "react-icons/md";
 
 export const FormWrapper = styled.div`
   position: relative;
@@ -12,11 +13,21 @@ export const FormInput = styled.input`
   padding-left: 8px;
 `;
 
-export const CloseBtn = styled.div`
+export const Clear = styled.div`
   position: absolute;
   right: 10px;
-  top: 5px;
-  width: 16px;
-  height: 16px;
+  top: -3px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+
   background-color: green;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Icon = styled(MdOutlineCleanHands)`
+  fill: yellow;
 `;
