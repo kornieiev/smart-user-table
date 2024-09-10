@@ -10,4 +10,5 @@
 - axios
 - styled-components
 - react-icons
-- react-loader-spinner etc.
+- react-loader-spinner
+- etc.
