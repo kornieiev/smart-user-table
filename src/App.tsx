@@ -5,19 +5,13 @@ import { fetchAllUsers } from "./redux/users/operations.ts";
 import { UserTable } from "./components/UserTable/UserTable.tsx";
 import { AppDispatch } from "./redux/store.ts";
 import { DNA } from "react-loader-spinner";
-import {
-  selectAllUsers,
-  // selectError,
-  selectLoading,
-} from "./redux/users/selectors.ts";
+import { selectAllUsers, selectLoading } from "./redux/users/selectors.ts";
 import { MainText } from "./App.styled.ts";
-// import toast, { Toaster } from "react-hot-toast";
 
 function App() {
   const dispatch: AppDispatch = useDispatch();
   const data = useSelector(selectAllUsers);
   const isLoading = useSelector(selectLoading);
-  // const isError = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchAllUsers());
@@ -25,7 +19,6 @@ function App() {
 
   return (
     <>
-      {/* {isError && <Toaster />} */}
       {isLoading && (
         <DNA
           visible={true}
