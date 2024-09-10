@@ -5,7 +5,6 @@ import { AppDispatch } from "../../redux/store";
 import { selectFilters } from "../../redux/users/selectors";
 import { Clear, FormInput, FormWrapper, Icon } from "./Filter.styled";
 import { FiltersType } from "../../types";
-import { MdOutlineCleanHands } from "react-icons/md";
 
 type FilterProps = {
   rowName: [keyof FiltersType, string];
