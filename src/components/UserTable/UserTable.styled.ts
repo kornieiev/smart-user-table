@@ -6,8 +6,8 @@ export const MainTable = styled.table`
 `;
 
 export const Th = styled.th`
-  border-bottom: 2px solid green;
-  border-top: 1px solid #ffc973;
+  border-bottom: 2px solid #ffc973;
+  border-top: 2px solid #ffc973;
   padding: 10px;
   text-align: left;
   background-color: transparent;

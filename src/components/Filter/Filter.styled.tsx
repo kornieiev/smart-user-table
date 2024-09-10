@@ -8,12 +8,13 @@ export const FormWrapper = styled.div`
 `;
 
 export const FormInput = styled.input`
-  width: 90%;
-  padding-right: 8px;
-  padding-left: 8px;
+  width: 85%;
+  padding: 6px 12px;
   border: none;
   border-radius: 8px;
-  padding: 4px;
+  font-size: 16px;
+  margin: 12px 6px 6px 0;
+  gap: 10px;
 `;
 
 export const Clear = styled.div`
