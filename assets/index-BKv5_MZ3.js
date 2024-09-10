@@ -55,8 +55,8 @@ Error generating stack: `+o.message+`
   width: 100%;
   border-collapse: collapse;
 `,Gw=we.th`
-  border-bottom: 2px solid green;
-  border-top: 1px solid #ffc973;
+  border-bottom: 2px solid #ffc973;
+  border-top: 2px solid #ffc973;
   padding: 10px;
   text-align: left;
   background-color: transparent;
@@ -72,12 +72,13 @@ Error generating stack: `+o.message+`
   display: flex;
   flex-direction: column;
 `,cS=we.input`
-  width: 90%;
-  padding-right: 8px;
-  padding-left: 8px;
+  width: 85%;
+  padding: 6px 12px;
   border: none;
   border-radius: 8px;
-  padding: 4px;
+  font-size: 16px;
+  margin: 12px 6px 6px 0;
+  gap: 10px;
 `,fS=we.div`
   display: block;
   position: absolute;
